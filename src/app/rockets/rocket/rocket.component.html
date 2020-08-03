@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{rocketData.rocket.rocket_name}}</mat-card-title>
+      <mat-card-subtitle><strong>Mission Ids:</strong> 
+        <ul>
+          <li *ngFor="let id of rocketData.mission_id">
+            {{ id }}
+          </li>
+        </ul>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{rocketData.links.mission_patch_small}}" alt="Photo of Mission Patch">
+    <mat-card-content>
+      <strong>Launch Year</strong> {{rocketData.launch_year}}
+      <strong>Successful Launch</strong> {{rocketData.launch_success}}
+      <strong>Successful Landing</strong> {{rocketData.rocket.first_stage.cores[0].land_success}}
+    </mat-card-content>
+  </mat-card>
